@@ -1,6 +1,6 @@
 # oyoslider
 <a href="http://oyoweb.nl/music/plugins/oyoslider/testslider.html" target="_blank">
-  <img src="http://oyoweb.nl/music/plugins/oyoslider/oyoslider.jpg" alt="oyoslider">
+  <img src="http://oyoweb.nl/music/plugins/oyoslider/oyosliders.jpg" alt="oyoslider">
 </a>
 <p>Slider Component</p>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;currency_code=EUR&amp;business=software@oyoweb.nl&amp;item_name=donation%20for%20oyoslider" rel="nofollow">

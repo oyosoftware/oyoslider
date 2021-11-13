@@ -20,18 +20,17 @@
   <li><strong>source</strong> https://github.com/oyosoftware/oyoslider</li>
 </ul>
 <h2>Description</h2>
-<p>jQuery component for media buttons.</p>
+<p>jQuery component for a slider.</p>
 <h3>Features</h3>
 <ul>
-  <li>Use buttons for handling media.</li>
-  <li>Graphics are based on SVG.</li>
-  <li>Buttons can be enabled/disabled.</li>
-  <li>Automatic state change.</li>
-  <li>Posibility for free buttons.</li>
-  <li>Function for creating SVG content elements.</li>
-  <li>Function for creating radial gradients.</li>
+  <li>A slider that is browser independent.</li>
+  <li>Slider can be enabled/disabled.</li>
+  <li>Automatic value change.</li>
+  <li>Cursor keys control can be changed to another element.</li>
   <li>Colors can be changed.</li>
-  <li>Buttons can be scaled without losing space.</li>
+  <li>Size of all parts can be changed.</li>
+  <li>Minimum value, maximum value and step can be defined.</li>
+  <li>.</li>
 </ul>
 <h2>Contact</h2>
 <ul>

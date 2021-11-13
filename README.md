@@ -25,12 +25,11 @@
 <ul>
   <li>A slider that is browser independent.</li>
   <li>Slider can be enabled/disabled.</li>
-  <li>Automatic value change.</li>
-  <li>Cursor keys control can be changed to another element.</li>
+  <li>Automatic value change, can also be set.</li>
+  <li>Cursor keys control can be assigned to another element.</li>
   <li>Colors can be changed.</li>
   <li>Size of all parts can be changed.</li>
   <li>Minimum value, maximum value and step can be defined.</li>
-  <li>.</li>
 </ul>
 <h2>Contact</h2>
 <ul>

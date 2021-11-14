@@ -13,7 +13,6 @@
 </div>
 <ul>
   <li><strong>category</strong> component</li>
-  <li><strong>author</strong> oyosoftware <a href="mailto:software@oyoweb.nl">software@oyoweb.nl</a></li>
   <li><strong>copyright</strong> 2021 oyosoftware </li>
   <li><strong>license</strong> MIT License</li>
   <li><strong>link</strong> http://www.oyoweb.nl/music/plugins/oyoslider/testslider.html</li>

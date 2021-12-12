@@ -176,7 +176,6 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
     }
 
     function keydown(event) {
-        console.log("hallo");
         if (!slider.disabled) {
             if (event.keyCode === 37) {
                 trackValue -= trackStep;

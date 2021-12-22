@@ -9,18 +9,6 @@
  * oyoslider is a tool to define an alternative slider element which is browser independant
  */
 
-var scriptfolder;
-
-(function () {
-    var src = $("script").last().attr("src");
-    scriptfolder = src.substring(0, src.lastIndexOf("/") + 1);
-    var link = document.createElement("link");
-    $(link).attr("rel", "stylesheet");
-    var href = src.substring(0, src.length - 3) + ".css";
-    $(link).attr("href", href);
-    $("head").append(link);
-})();
-
 function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, trackHeight, trackBorderRadius, thumbWidth, thumbHeight, thumbBorderRadius) {
 
     var defaultBeforeColor = "#527FC3";

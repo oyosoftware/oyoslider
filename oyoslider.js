@@ -17,6 +17,7 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
     var trackMax = 100;
     var trackStep = 1;
     var trackValue = 0;
+    var activeElement;
 
     var slider = document.createElement("div");
     $(slider).addClass("oyoslider");
@@ -90,12 +91,17 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         $(thumb).css("border-radius", thumbBorderRadius);
     }
 
+    $(document).on("mouseover", documentMouseOver);
     $(slider).on("mouseover", mouseOver);
     $(slider).on("mouseout", mouseOut);
     $(slider).on("mousedown", mouseDown);
     $(document).on("mousemove", mouseMove);
     $(slider).on("mouseup", mouseUp);
     $(slider).on("keydown", keydown);
+
+    function documentMouseOver(event) {
+        activeElement = event.target;
+    }
 
     function mouseOver() {
         if (!slider.disabled) {
@@ -194,6 +200,10 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         trackValue = trackMin;
         changeThumbPosition();
         $(thumb).removeClass("oyoactive");
+        var elements = $(slider).add($(slider).find("*")).toArray();
+        if (elements.indexOf(activeElement) === -1) {
+            $(thumb).css("display", "none");
+        }
     };
 
     slider.setKeyControlElement = function (element, on) {

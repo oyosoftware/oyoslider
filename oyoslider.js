@@ -94,11 +94,10 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
     $(slider).on("mouseout", mouseOut);
     $(slider).on("mousedown", mouseDown);
     $(document).on("mousemove", mouseMove);
-    $(document).on("mouseup", mouseUp);
-    $(slider).on("click", click);
+    $(slider).on("mouseup", mouseUp);
     $(slider).on("keydown", keydown);
 
-    function mouseOver(event) {
+    function mouseOver() {
         if (!slider.disabled) {
             $(thumb).css("display", "block");
             $("body").css("cursor", "pointer");
@@ -119,9 +118,12 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         }
     }
 
-    function mouseDown(event) {
+    function mouseDown() {
         if (!slider.disabled) {
             $(thumb).addClass("oyoactive");
+            var offsetX = $(track).offset().left + parseInt($(track).css("border-left-width"));
+            trackValue = trackMin + (trackMax - trackMin) * (event.pageX - offsetX) / $(track).width();
+            changeThumbPosition();
         }
     }
 
@@ -152,14 +154,6 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
                 $(thumb).css("display", "none");
                 $("body").css("cursor", "default");
             }
-        }
-    }
-
-    function click(event) {
-        if (!slider.disabled) {
-            var offsetX = $(track).offset().left + parseInt($(track).css("border-left-width"));
-            trackValue = trackMin + (trackMax - trackMin) * (event.pageX - offsetX) / $(track).width();
-            changeThumbPosition();
         }
     }
 
@@ -202,12 +196,12 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         $(thumb).removeClass("oyoactive");
     };
 
-    slider.setKeyControlElement = function (element, active) {
-        if (active === undefined) {
-            active = true;
+    slider.setKeyControlElement = function (element, on) {
+        if (on === undefined) {
+            on = true;
         }
         $(slider).off("keydown", keydown);
-        if (active) {
+        if (on) {
             $(element).on("keydown", keydown);
         } else {
             $(element).off("keydown", keydown);

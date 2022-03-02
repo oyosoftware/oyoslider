@@ -96,7 +96,6 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
     $(slider).on("mouseout", mouseOut);
     $(slider).on("mousedown", mouseDown);
     $(document).on("mousemove", mouseMove);
-    $(slider).on("mouseup", mouseUp);
     $(slider).on("keydown", keydown);
 
     function documentMouseOver(event) {
@@ -149,17 +148,7 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
                     $("body").css("cursor", "default");
                 }
             }
-        }
-    }
-
-    function mouseUp(event) {
-        if (!slider.disabled) {
-            var elements = $(slider).add($(slider).find("*")).toArray();
-            if (elements.indexOf(event.target) === -1 && $(thumb).hasClass("oyoactive")) {
-                $(thumb).removeClass("oyoactive");
-                $(thumb).css("display", "none");
-                $("body").css("cursor", "default");
-            }
+            event.stopPropagation();
         }
     }
 

@@ -4,7 +4,7 @@
         <title>Test Slider</title>
         <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
         <script src="oyoslider.js"></script>
-        <link rel="stylesheet" href="oyoslider.css">
+<!--        <link rel="stylesheet" href="oyoslider.css">-->
         <style>
             * {
                 box-sizing: border-box;
@@ -44,39 +44,14 @@
                     volumeSlider.change(84, 12, 0, "black");
                     volumeSlider.changeTrack(52, 4, 2);
                     volumeSlider.max = 25;
+					volumeSlider.value = 25;
                     $(controlsPanel).append(volumeSlider);
-                    var left = $(".oyotrack", volumeSlider).width() - $(".oyothumb", volumeSlider).width() / 2;
-                    $(".oyothumb", volumeSlider).css("left", left);
-                    var width = left + $(".oyothumb", volumeSlider).width() / 2;
-                    $(".oyotrackbefore", volumeSlider).width(width);
-
-                    $(document).on("mousemove", mouseMove);
-
-                    function mouseMove(event) {
-                        var mousedown = (event.which === 1);
-                        var elements = $(trackSlider).add($(trackSlider).find("*")).toArray();
-                        if (elements.indexOf(event.target) !== -1) {
-                            if (mousedown && $(".oyothumb", trackSlider).hasClass("active")) {
-                                document.getSelection().removeAllRanges();
-                            } else {
-                                $(".oyothumb", trackSlider).removeClass("active");
-                            }
-                        }
-                        var elements = $(volumeSlider).add($(volumeSlider).find("*")).toArray();
-                        if (elements.indexOf(event.target) !== -1) {
-                            if (mousedown) {
-                                document.getSelection().removeAllRanges();
-                            }
-                        }
-                    }
-
                 }
 
             });
         </script>
 
-        <div class="oyocontrolspanel">
-        </div>
+        <div class="oyocontrolspanel"></div>
 
     </body>
 </html>

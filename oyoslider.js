@@ -25,35 +25,64 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
     $(slider).width(300);
     $(slider).height(12);
     $(slider).css("outline", "none");
+    $(slider).css("background-color", "black");
+    $(slider).css("border-radius", "6px");
     slider.disabled = false;
 
     var track = document.createElement("div");
     $(track).attr("class", "oyotrack");
     $(track).width(288);
     $(track).height(4);
+    $(track).css("box-sizing", "content-box");
+    $(track).css("position", "relative");
+    $(track).css("margin", "auto");
+    $(track).css("top", "50%");
+    $(track).css("transform", "translateY(-50%)");
+    $(track).css("border-width", "0px");
+    $(track).css("border-radius", "2px");
     $(slider).append(track);
 
     var thumb = document.createElement("div");
     $(thumb).attr("class", "oyothumb");
     $(thumb).width(12);
     $(thumb).height(12);
+    $(thumb).css("z-index", "2");
+    $(thumb).css("position", "absolute");
+    $(thumb).css("left", "-6px");
+    $(thumb).css("top", "50%");
+    $(thumb).css("transform", "translateY(-50%)");
+    $(thumb).css("background-color", "white");
+    $(thumb).css("border-radius", "6px");
+    $(thumb).css("display", "none");
     $(track).append(thumb);
 
     var trackRange = document.createElement("div");
     $(trackRange).attr("class", "oyotrackrange");
     $(trackRange).width(288);
     $(trackRange).height(4);
+    $(trackRange).css("z-index", "1");
+    $(trackRange).css("position", "absolute");
+    $(trackRange).css("border-radius", "2px");
+    $(trackRange).css("position", "absolute");
+    $(trackRange).css("overflow", "hidden");
     $(track).append(trackRange);
 
     var trackBefore = document.createElement("div");
     $(trackBefore).attr("class", "oyotrackbefore");
     $(trackBefore).height(4);
+    $(trackBefore).css("z-index", "1");
+    $(trackBefore).css("position", "absolute");
+    $(trackBefore).css("background-color", defaultBeforeColor);
+    $(trackBefore).css("border-radius", "2px");
     $(trackRange).append(trackBefore);
 
     var trackAfter = document.createElement("div");
     $(trackAfter).attr("class", "oyotrackafter");
     $(trackAfter).width(288);
     $(trackAfter).height(4);
+    $(trackAfter).css("position", "absolute");
+    $(trackAfter).css("background-color", defaultAfterColor);
+    $(trackAfter).css("border-radius", "2px");
     $(trackRange).append(trackAfter);
 
     if (sliderWidth !== undefined) {
@@ -286,6 +315,12 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         $(trackAfter).css("background-color", defaultAfterColor);
     };
 
+    /**
+        Set country code for the specified country.
+        @function this.change
+        @param {string} width The country for which the country code is set.
+        @param {string} height The country code which is set.
+    */
     slider.change = function (width, height, borderRadius, color) {
         if (width !== undefined) {
             var oldSliderWidth = $(slider).width();

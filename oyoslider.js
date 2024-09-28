@@ -292,7 +292,7 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         $("body").css("cursor", "default");
     };
 
-    slider.changeColor = function (color) {
+    slider.changeBackgroundColor = function (color) {
         $(slider).css("background-color", color);
     };
 
@@ -315,7 +315,7 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         $(trackAfter).css("background-color", defaultAfterColor);
     };
 
-    slider.change = function (width, height, borderRadius, color) {
+    slider.change = function (width, height, borderRadius, backgroundColor) {
         if (width !== undefined) {
             var oldSliderWidth = $(slider).width();
             $(slider).width(width);
@@ -329,8 +329,8 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         if (borderRadius !== undefined) {
             $(slider).css("border-radius", borderRadius);
         }
-        if (color !== undefined) {
-            $(slider).css("background-color", color);
+        if (backgroundColor !== undefined) {
+            $(slider).css("background-color", backgroundColor);
         }
     };
 

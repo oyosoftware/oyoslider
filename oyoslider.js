@@ -315,12 +315,6 @@ function oyoSlider(sliderWidth, sliderHeight, sliderBorderRadius, trackWidth, tr
         $(trackAfter).css("background-color", defaultAfterColor);
     };
 
-    /**
-        Set country code for the specified country.
-        @function this.change
-        @param {string} width The country for which the country code is set.
-        @param {string} height The country code which is set.
-    */
     slider.change = function (width, height, borderRadius, color) {
         if (width !== undefined) {
             var oldSliderWidth = $(slider).width();
